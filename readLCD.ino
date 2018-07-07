@@ -15,7 +15,8 @@ void setup() {
 }
 
 void loop() {
-  int rdata;
+  //int rdata;
+  char rdata;
   String lcdString;
   
   while(Serial.available()) {
