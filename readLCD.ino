@@ -16,6 +16,8 @@ void setup() {
 
 void loop() {
   int rdata;
+  String lcdString;
+  
   while(Serial.available()) {
 
     a = Serial.readString();// read the incoming data as string
@@ -26,7 +28,6 @@ void loop() {
     lcd.print(a);
     lcd.setCursor(0,0);
     
-    String lcdString;
     for (int i=0;i<32; i++) {
       rdata = lcd.read();
       lcdString[i] = rdata;
