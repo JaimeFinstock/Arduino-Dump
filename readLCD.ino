@@ -30,13 +30,14 @@ void loop() {
     
     for (int i=0;i<32; i++) {
       rdata = lcd.read();
-      lcdString[i] = rdata;
+      //lcdString[i] = rdata;
+      lcdString += rdata;
     }
 
     //Serial.println(rdata);
   }
   
-  Serial.println("Exitting the serial loop.");
+  //Serial.println("Exitting the serial loop.");
   String res = "LCD Value: " + lcdString;
   if (lcdString!="") Serial.println(res);
 
