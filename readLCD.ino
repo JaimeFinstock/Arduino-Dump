@@ -29,13 +29,18 @@ void loop() {
     lcd.print(a);
     lcd.setCursor(0,0);
     
-    for (int i=0;i<32; i++) {
-      lcd.setCursor(i%16, i < 16 ? 0 : 1);
-      rdata = lcd.read();
-      //lcdString[i] = rdata;
-      lcdString += rdata;
-    }
-
+//     for (int i=0;i<32; i++) {
+//       lcd.setCursor(i%16, i < 16 ? 0 : 1);
+//       rdata = lcd.read();
+//       //lcdString[i] = rdata;
+//       lcdString += rdata;
+//     }
+    for (int row=0; row < 2; row++)
+      for (int col; col < 16; col++) {
+        lcd.setCursor(col, row);
+        rdata = lcd.read();
+        lcdString += rdata;
+      }
     //Serial.println(rdata);
   }
   
