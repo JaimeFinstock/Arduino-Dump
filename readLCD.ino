@@ -35,6 +35,7 @@ void loop() {
 
     //Serial.println(rdata);
   }
-  if (lcdString!="") Serial.println(lcdString);
+  String res = "LCD Value: " + lcdString;
+  if (lcdString!="") Serial.println(res);
 
 }
