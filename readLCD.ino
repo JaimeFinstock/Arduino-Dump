@@ -36,7 +36,7 @@ void loop() {
 //       lcdString += rdata;
 //     }
     for (int row=0; row < 2; row++)
-      for (int col; col < 16; col++) {
+      for (int col=0; col < 16; col++) {
         lcd.setCursor(col, row);
         rdata = lcd.read();
         lcdString += rdata;
