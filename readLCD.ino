@@ -9,25 +9,31 @@ String a;
 
 void setup() {
 
-Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
-lcd.begin(16,2);
- lcd.lineWrap();
+  Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
+  lcd.begin(16,2);
+  lcd.lineWrap();
 }
 
 void loop() {
-int rdata;
-while(Serial.available()) {
+  int rdata;
+  while(Serial.available()) {
 
-    a= Serial.readString();// read the incoming data as string
+    a = Serial.readString();// read the incoming data as string
 
     Serial.println(a);
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print(a);
     lcd.setCursor(0,0);
-    rdata = lcd.read();
+    
+    String lcdString;
+    for (int i=0;i<32; i++) {
+      rdata = lcd.read();
+      lcdString[i] = rdata;
+    }
 
-    Serial.println(rdata);
-}
+    //Serial.println(rdata);
+  }
+  if (lcdString!="") Serial.println(lcdString);
 
 }
