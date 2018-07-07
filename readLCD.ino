@@ -30,6 +30,7 @@ void loop() {
     lcd.setCursor(0,0);
     
     for (int i=0;i<32; i++) {
+      lcd.setCursor(i%16, i < 16 ? 0 : 1);
       rdata = lcd.read();
       //lcdString[i] = rdata;
       lcdString += rdata;
